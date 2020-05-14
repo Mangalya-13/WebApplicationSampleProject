@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Begin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <script type="text/ng-template">
+
+        var app = angular.module("uigridApp", []);
+
+        app.controller("uigridCtrl", function ($scope) {
+
+            $scope.users = [
+
+                { name: "Madhav Sai", age: 10, location: 'Nagpur' },
+
+                { name: "Suresh Dasari", age: 30, location: 'Chennai' },
+
+                { name: "Rohini Alavala", age: 29, location: 'Chennai' },
+
+                { name: "Praveen Kumar", age: 25, location: 'Bangalore' },
+
+                { name: "Sateesh Chandra", age: 27, location: 'Vizag' }
+
+            ];
+
+        });
+
+    </script>
+
+    <style type="text/css">
+
+        .myGrid {
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body ng-app="uigridApp">
+    <h2>Arithmetic Expression In Angularjs</h2> <br />
+
+    <h3>Addition</h3>
+    10 + 20 = {{10+20}}
+
+    <br /><h3>Subtraction</h3>
+    30 - 20 = {{30-20}}
+
+    <br /><h3>Multiply</h3>
+    10 * 20 = {{10*20}}
+
+    <br /><h3>Division</h3>
+    20 / 10 = {{20/10}}
+
+    <h2>AngularJS UI Grid Example</h2>
+
+    <div ng-controller="uigridCtrl">
+
+        <div ui-grid="{ data: users }" class="myGrid"></div>
+
+    </div>
+</body>
+</html>
